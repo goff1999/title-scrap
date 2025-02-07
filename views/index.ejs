@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title Aggregator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            text-align: center;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Article Headlines from The Verge</h1>
+    <ul>
+        <% articles.forEach(article => { %>
+            <li>
+                <a href="<%= article.url %>" target="_blank"><%= article.title %></a> - <%= new Date(article.date).toDateString() %>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
